@@ -8,7 +8,7 @@ const App: React.FC = (): JSX.Element => {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit
+          Edit 브런치테스트
           <code>src/App.tsx</code>
           and save to reload.
         </p>
