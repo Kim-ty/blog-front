@@ -4,14 +4,14 @@
   position: relative;
   .remote-inner {
     @include flex(center, center);
-    // position: absolute;
-    // bottom: 16vh;
-    // right: 2vw;
+    position: absolute;
+    bottom: 16vh;
+    right: calc(2vw - 7px);
 
-    position: fixed;
-    bottom: 2vh;
-    right: 2vw;
     &.fixed {
+      position: fixed;
+      bottom: 3vh;
+      right: 2vw;
     }
   }
 }

@@ -1,37 +1,31 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import classNames from 'classnames';
 import './Remote.scss';
 
 const Remote: React.FC = (): JSX.Element => {
-  const listenerTest = () => {
-    console.log(document.getElementById('RootPage')?.scrollTop);
-  };
-  const clickevent = () => {
-    console.log('click');
+  const [isFixed, setIsFixed] = useState<boolean>(true);
+
+  const remoteScroll = () => {
+    const scrollTop: number = document.getElementById('RootPage')?.scrollTop || 0;
+    const rootPageHeight: number = document.getElementById('RootPage')?.clientHeight || 0;
+    const scrollHeight: number = document.getElementById('RootPage')?.scrollHeight || 0;
+    const footerHeight: number = document.getElementById('Footer')?.clientHeight || 0;
+
+    setIsFixed(scrollTop + rootPageHeight <= scrollHeight - footerHeight);
   };
 
   useEffect(() => {
-    document.addEventListener('scroll', listenerTest, true);
-    document.addEventListener('click', clickevent, true);
+    document.addEventListener('scroll', remoteScroll, true);
+
     return () => {
-      document.removeEventListener('scroll', listenerTest, true);
-      document.removeEventListener('click', clickevent, true);
+      document.removeEventListener('scroll', remoteScroll, true);
     };
-    // return () => {
-    //   console.log('sss');
-    //   window.removeEventListener('click', listenerTest);
-    // };
   }, []);
 
   return (
     <div id="Remote">
-      <div className="remote-inner">
-        <div
-          onClick={() => {
-            window.scroll(0, 0);
-            console.log('상 클릭');
-          }}>
-          상
-        </div>
+      <div className={classNames('remote-inner', { fixed: isFixed })}>
+        <div onClick={() => document.getElementById('RootPage')?.scroll(0, 0)}>상</div>
         <div>하</div>
       </div>
     </div>

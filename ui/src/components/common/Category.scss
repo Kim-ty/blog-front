@@ -2,28 +2,28 @@
 
 #Category {
   @include flex(flex-start, flex-start);
-  // width: 15vw;
   align-self: flex-start;
   flex-direction: row;
   position: relative;
   font-size: 1.4rem;
-  // position: absolute;
-  // width: 15vw;
   .category-inner {
-    width: 10vw;
+    width: 12vw;
     position: absolute;
-    top: 10vh;
-    left: 2.5vw;
+    top: 8vh;
+    left: 1.5vw;
     border: 1px solid #e6e6e6;
     padding: 2.5vh 1vw;
+
+    &.fixed {
+      position: fixed;
+    }
+
     .total-view {
       text-align: center;
     }
     .title {
       height: 3vh;
       &:hover {
-        // height: 2.5rem;
-        // line-height: 2.5rem;
         font-weight: 700;
         cursor: pointer;
       }
