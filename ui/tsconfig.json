@@ -1,11 +1,8 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "target": "es6",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext", "es5", "es2015.collection", "es2015.iterable"],
     "noImplicitAny": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -20,10 +17,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "outDir":"./dist",
-    "typeRoots": ["./node_modules/@types","types"]
+    "outDir": "./dist",
+    "typeRoots": ["./node_modules/@types", "types"]
   },
-  "include": [
-    "./src/**/*"
-  ]
+  "include": ["src"],
+  "exclude": ["node_modules", ".vscode", "build"]
 }

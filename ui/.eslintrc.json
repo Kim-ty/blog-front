@@ -108,6 +108,7 @@
     "jsx-a11y/label-has-associated-control": 0,
     "react/no-array-index-key": 0,
     "react/function-component-definition": 0,
-    "arrow-body-style": 0
+    "arrow-body-style": 0,
+    "react-hooks/exhaustive-deps": 0
   }
 }

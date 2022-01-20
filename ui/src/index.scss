@@ -1,0 +1,317 @@
+@charset "utf-8";
+// @import './shared/scss/fonts.scss';
+// @import './shared/scss/icons.scss';
+
+@mixin font-family {
+  font-family: 'NunitoSans', 'MalgunGothic', '맑은 고딕', sans-serif;
+}
+
+* {
+  outline: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  body,
+  div,
+  span,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  abbr,
+  address,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  samp,
+  small,
+  strong,
+  sub,
+  sup,
+  var,
+  b,
+  i,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    font: inherit;
+    line-height: normal;
+    vertical-align: baseline;
+    font-style: normal;
+    @include font-family;
+  }
+}
+
+html {
+  height: 100%;
+  background-color: transparent;
+  font-size: 62.5%;
+}
+
+body {
+  @include font-family;
+  color: #191919;
+  line-height: normal;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* scrollbar */
+  ::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #fff;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #c5c6ca;
+    border-radius: 25px 25px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c5c6ca;
+  }
+}
+
+body.col-resizing {
+  cursor: col-resize !important;
+  user-select: none;
+
+  * {
+    cursor: col-resize !important;
+  }
+}
+
+body.row-resizing {
+  cursor: row-resize !important;
+  user-select: none;
+
+  * {
+    cursor: col-resize !important;
+  }
+}
+
+form {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table,
+thead,
+tbody,
+tfoot,
+tr,
+th,
+td {
+  border: none;
+  border-collapse: inherit;
+  border-spacing: 0;
+  border-color: inherit;
+  vertical-align: inherit;
+  text-align: left;
+}
+
+@mixin no-outline {
+  &,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+a {
+  @include no-outline;
+  display: block;
+
+  font-weight: 400;
+  color: #191919;
+  text-decoration: none;
+}
+
+i {
+  display: inline-block;
+}
+
+input {
+  @include font-family;
+  @include no-outline;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border: none;
+}
+
+input[type='checkbox'] {
+  cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+textarea {
+  @include font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  resize: none;
+  outline: none;
+  overflow-wrap: break-word;
+  overflow: auto;
+  border: 1px solid #c5c6ca;
+  &::placeholder {
+    color: #c5c6ca;
+  }
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  letter-spacing: 0.5px;
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+button {
+  @include no-outline;
+  @include font-family;
+  position: relative;
+  border: none;
+  letter-spacing: 0.5px;
+  background-color: transparent;
+  line-height: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+
+  &.disabled {
+    cursor: initial;
+  }
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  // min-width: 1200px;
+  min-height: 600px;
+  font-weight: 400;
+  color: #191919;
+}
+
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */

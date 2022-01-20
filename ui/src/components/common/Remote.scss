@@ -1,0 +1,17 @@
+@import 'scss/_utils.scss';
+
+#Remote {
+  position: relative;
+  .remote-inner {
+    @include flex(center, center);
+    // position: absolute;
+    // bottom: 16vh;
+    // right: 2vw;
+
+    position: fixed;
+    bottom: 2vh;
+    right: 2vw;
+    &.fixed {
+    }
+  }
+}

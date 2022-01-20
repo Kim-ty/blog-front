@@ -1,0 +1,19 @@
+/* 브랜드 컬러 */
+$purpleLeaf: #a97dc5;
+$purple: #8c5aa6;
+$fontcolor: #4e4964;
+$pink: #d995d3;
+$lightpink: #eec0ec;
+$back-color: #e7deeb;
+
+@mixin flex($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
