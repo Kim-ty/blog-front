@@ -4,12 +4,11 @@ import React, { useEffect, useState } from 'react';
 import './Category.scss';
 
 const Category: React.FC = () => {
-  const [isFixed, setIsFixed] = useState<boolean>(true);
+  const [isFixed, setIsFixed] = useState<boolean>(false);
 
   const categoryScroll = () => {
     const scrollTop: number = document.getElementById('RootPage')?.scrollTop || 0;
     const HeaderHeight: number = document.getElementById('Header')?.clientHeight || 0;
-
     setIsFixed(scrollTop >= HeaderHeight);
   };
 
