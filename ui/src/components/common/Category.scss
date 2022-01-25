@@ -4,20 +4,13 @@
   @include flex(flex-start, flex-start);
   align-self: flex-start;
   flex-direction: row;
-  position: relative;
-  font-size: 1.4rem;
+
   .category-inner {
-    width: 12vw;
-    position: absolute;
-    top: 8vh;
-    left: 1.5vw;
+    width: 100%;
+    height: 100%;
     border: 1px solid #e6e6e6;
     padding: 2.5vh 1vw;
     background-color: #ffffff;
-
-    &.fixed {
-      position: fixed;
-    }
 
     .total-view {
       text-align: center;
@@ -32,6 +25,20 @@
     .small-cate {
       > .title {
         padding-left: 1vw;
+      }
+    }
+  }
+
+  &.isBoard {
+    position: relative;
+    font-size: 1.4rem;
+    &.category-inner {
+      position: absolute;
+      width: 12vw;
+      top: 8vh;
+      left: 1.5vw;
+      &.fixed {
+        position: fixed;
       }
     }
   }

@@ -44,7 +44,7 @@
         }
       }
     ],
-    "indent": ["error", 2],
+    // "indent": ["error", 2],
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "import/no-unresolved": 0,
     "linebreak-style": [0, "windows"],

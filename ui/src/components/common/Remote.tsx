@@ -25,8 +25,8 @@ const Remote: React.FC = (): JSX.Element => {
   return (
     <div id="Remote">
       <div className={classNames('remote-inner', { fixed: isFixed })}>
-        <div onClick={() => document.getElementById('RootPage')?.scroll(0, 0)}>상</div>
-        <div>하</div>
+        <i className="arrow" onClick={() => document.getElementById('RootPage')?.scroll(0, 0)} />
+        <i className="arrow bottom" onClick={() => document.getElementById('RootPage')?.scroll(0, 10000000000)} />
       </div>
     </div>
   );

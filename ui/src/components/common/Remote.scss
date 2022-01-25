@@ -13,5 +13,29 @@
       bottom: 3vh;
       right: 2vw;
     }
+
+    .arrow {
+      width: 40px;
+      height: 40px;
+      background-image: url('/icon/arrow.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      cursor: pointer;
+      &:hover {
+        background-position-x: -108px;
+      }
+
+      &:active {
+        background-position-x: -54px;
+      }
+
+      &:first-child {
+        margin-right: 3px;
+      }
+
+      &.bottom {
+        transform: rotate(180deg);
+      }
+    }
   }
 }

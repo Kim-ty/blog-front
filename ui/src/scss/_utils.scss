@@ -17,3 +17,19 @@ $back-color: #e7deeb;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+@mixin icon($width, $height, $icon) {
+  width: $width;
+  height: $height;
+  background-image: url('/icon/' + $icon + '.svg');
+  background-repeat: no-repeat;
+  background-position: 0;
+  background-size: cover;
+  cursor: pointer;
+  &:hover {
+    background-position-x: -$width;
+  }
+  &:active {
+    background-position-x: -$width * 2;
+  }
+}
