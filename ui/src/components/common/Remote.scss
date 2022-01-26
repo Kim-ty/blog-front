@@ -6,12 +6,11 @@
     @include flex(center, center);
     position: absolute;
     bottom: 16vh;
-    right: calc(2vw - 7px);
+    right: 2vw;
 
     &.fixed {
       position: fixed;
       bottom: 3vh;
-      right: 2vw;
     }
 
     .arrow {

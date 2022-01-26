@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { useEffect, useRef, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import './Header.scss';
 import Menu from './Menu';
@@ -10,21 +10,13 @@ const Header: React.FC = () => {
   const [searchActive, setSearchActive] = useState<boolean>(false);
   const [searchText, setSearchText] = useState<string>('');
   const [isFixed, setIsFixed] = useState<boolean>(false);
-  const location = useLocation().pathname;
-  const [isMain, setIsMain] = useState<boolean>(useLocation().pathname.includes('board'));
+
+  const header = useRef<HTMLDivElement>(null);
   const searchInput = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    if (location.length === 1) setIsMain(true);
-    else setIsMain(false);
-  }, [location]);
-
-  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const clickOutsideHandler = (e: MouseEvent): void => {
       const clickTarget = searchInput.current && searchInput.current.contains(e.target as HTMLElement);
-      // eslint-disable-next-line no-useless-return
       if (!!searchActive && !clickTarget) setSearchActive(false);
     };
 
@@ -33,16 +25,17 @@ const Header: React.FC = () => {
     return (): void => document.removeEventListener('click', clickOutsideHandler);
   }, [searchActive]);
 
-  const categoryScroll = () => {
-    const scrollTop: number = document.getElementById('RootPage')?.scrollTop || 0;
-    const HeaderHeight: number = document.getElementById('Header')?.clientHeight || 0;
-    setIsFixed(scrollTop >= HeaderHeight);
+  const onScrollHandler = () => {
+    const scrollTop: number = window.scrollY || 0;
+    const HeaderHeight: number = header?.current?.clientHeight || 0;
+    if (scrollTop === 0) setIsFixed(false);
+    else setIsFixed(scrollTop >= HeaderHeight);
   };
 
   useEffect(() => {
-    document.addEventListener('scroll', categoryScroll, true);
+    document.addEventListener('scroll', onScrollHandler, true);
     return () => {
-      document.removeEventListener('scroll', categoryScroll, true);
+      document.removeEventListener('scroll', onScrollHandler, true);
     };
   }, []);
 
@@ -56,14 +49,29 @@ const Header: React.FC = () => {
   }, [isFixed]);
 
   return (
-    <div id="Header" className={classNames({ isFixed, isMain })}>
+    <div id="Header" ref={header} className={classNames({ isFixed })}>
       {!!isFixed && (
         <div className="menu-wrap">
           <i className="menu-icon" onClick={() => setMenuActive(!menuActive)} />
           <Menu isActive={menuActive} setIsActive={setMenuActive} />
         </div>
-      )}{' '}
-      <h1>Gabe.dev log</h1>
+      )}
+      <div className="center-wrap">
+        <NavLink className="header-title" to="/">
+          Gabe.dev log
+        </NavLink>
+        <div className={classNames('page-navi', { isFixed })}>
+          <NavLink className="navi" to="/posts">
+            Posts
+          </NavLink>
+          <NavLink className="navi" to="/profile">
+            Profile
+          </NavLink>
+          <NavLink className="navi" to="/history">
+            History
+          </NavLink>
+        </div>
+      </div>
       <div className="search-wrap">
         <input
           ref={searchInput}

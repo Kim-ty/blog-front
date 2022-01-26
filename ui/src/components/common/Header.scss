@@ -3,24 +3,65 @@
 #Header {
   @include flex(center, flex-start);
   position: relative;
-  width: 100vw;
-  height: 8vh;
+  width: 100%;
+  height: 20vh;
   padding: 0 2vw;
   border-bottom: 1px solid #e6e6e6;
   background-color: #ffffff;
-
-  &.isMain {
-    height: 20vh;
-  }
+  // transition: all ease 0.2s;
+  z-index: 1002;
 
   &.isFixed {
     position: fixed;
-    height: 8vh;
+    width: 100%;
+    height: 70px;
+    transition: unset;
   }
 
   .menu-icon {
     @include icon(27px, 25.5px, category);
     justify-self: flex-start;
+  }
+
+  .center-wrap {
+    @include flex(center, center);
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+
+    .header-title {
+      font-size: 3.8rem;
+      font-weight: 700;
+      margin: auto;
+    }
+
+    .page-navi {
+      @include flex(center, center);
+      align-self: center;
+
+      &.isFixed {
+        height: 0;
+        overflow-y: hidden;
+        transition: all ease 0.2s;
+      }
+
+      .navi {
+        width: 7vw;
+        font-size: 2.4rem;
+        font-weight: 400;
+        line-height: 3.5rem;
+        padding: 0 1.5vw;
+        padding-bottom: 5px;
+        text-align: center;
+        cursor: pointer;
+        &:hover,
+        &.active {
+          font-weight: 700;
+          padding-bottom: initial;
+          border-bottom: 5px solid #a97dc5;
+        }
+      }
+    }
   }
 
   .search-wrap {
@@ -50,12 +91,5 @@
     .search-icon {
       @include icon(24px, 24px, search);
     }
-  }
-
-  > h1 {
-    font-size: 2.8rem;
-    font-weight: 800;
-    text-align: center;
-    margin: auto;
   }
 }

@@ -1,0 +1,21 @@
+@import 'scss/_utils.scss';
+
+#PostsCategory {
+  @include flex(center, space-between);
+  > a {
+    @include flex(center, center);
+    padding: 1vw;
+    flex: 1 1;
+
+    &:hover {
+      > span {
+        font-weight: 700;
+        padding-bottom: unset;
+        border-bottom: 2px solid $fontcolor;
+      }
+    }
+    > span {
+      padding-bottom: 2px;
+    }
+  }
+}

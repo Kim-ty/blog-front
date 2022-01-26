@@ -28,18 +28,4 @@
       }
     }
   }
-
-  &.isBoard {
-    position: relative;
-    font-size: 1.4rem;
-    &.category-inner {
-      position: absolute;
-      width: 12vw;
-      top: 8vh;
-      left: 1.5vw;
-      &.fixed {
-        position: fixed;
-      }
-    }
-  }
 }
