@@ -7,7 +7,7 @@ import PostsListRouter from 'router/posts/PostsListRouter';
 const PostsRouter: React.FC = () => {
   return (
     <Routes>
-      <Route path="/" element={<PostsListRouter />} />
+      <Route path="/*" element={<PostsListRouter />} />
       <Route path="/detail/:postsNo" element={<PostsDetailPage />} />
     </Routes>
   );

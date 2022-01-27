@@ -33,6 +33,10 @@
       font-size: 3.8rem;
       font-weight: 700;
       margin: auto;
+      transition: all ease 0.8s;
+      &:hover {
+        color: $purpleLeaf;
+      }
     }
 
     .page-navi {

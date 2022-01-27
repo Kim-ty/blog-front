@@ -21,7 +21,8 @@ const Menu: React.FC<I_Props> = ({ isActive, setIsActive }) => {
     };
 
     document.addEventListener('click', clickOutsideHandler);
-
+    if (isActive) document.body.style.overflowY = 'hidden';
+    else document.body.style.overflowY = 'unset';
     return (): void => document.removeEventListener('click', clickOutsideHandler);
   }, [isActive]);
 

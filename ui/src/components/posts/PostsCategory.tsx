@@ -6,7 +6,7 @@ import './PostsCategory.scss';
 const PostsCategory: React.FC = (): JSX.Element => {
   return (
     <div id="PostsCategory">
-      <NavLink to="">
+      <NavLink to="all">
         <span>전체보기</span>
       </NavLink>
       <NavLink to="react">

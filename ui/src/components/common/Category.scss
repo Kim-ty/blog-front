@@ -4,20 +4,21 @@
   @include flex(flex-start, flex-start);
   align-self: flex-start;
   flex-direction: row;
-
+  height: inherit;
   .category-inner {
     width: 100%;
-    height: 100%;
+    height: calc(100% - 4vh);
     border: 1px solid #e6e6e6;
     padding: 2.5vh 1vw;
     background-color: #ffffff;
-
+    overflow-y: scroll;
     .total-view {
       text-align: center;
     }
     .title {
       height: 3vh;
-      &:hover {
+      &:hover,
+      &.active {
         font-weight: 700;
         cursor: pointer;
       }

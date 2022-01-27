@@ -1,14 +1,18 @@
 import React from 'react';
 
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import PostsListPage from 'pages/root/PostsListPage';
+import PostsList from 'components/posts/PostsList';
 
 const PostsRouter: React.FC = () => {
   return (
-    <Routes>
-      <Route path="/" element={<PostsListPage />} />
-      <Route path="/:key" element={<PostsListPage />} />
-    </Routes>
+    <PostsListPage>
+      <Routes>
+        <Route path="/all" element={<PostsList />} />
+        <Route path="/:key" element={<PostsList />} />
+        <Route path="/" element={<Navigate to="/posts/all" />} />
+      </Routes>
+    </PostsListPage>
   );
 };
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import PostsListItem from './PostsListItem';
 
+import './PostsList.scss';
 // 보드 리스트
 const PostsList: React.FC = (): JSX.Element => {
   // 무한 스크롤 구현

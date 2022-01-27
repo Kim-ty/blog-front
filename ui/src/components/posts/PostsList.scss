@@ -1,0 +1,7 @@
+@import 'scss/_utils.scss';
+
+.Posts-list {
+  @include flex(center, flex-start);
+  flex-direction: column;
+  margin-top: 3vw;
+}
