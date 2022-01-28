@@ -1,0 +1,11 @@
+@import 'scss/_utils.scss';
+
+#PostsDetailRemote {
+  position: fixed;
+  left: 5vw;
+  top: 50vh;
+  &.post {
+    left: unset;
+    right: 5vw;
+  }
+}

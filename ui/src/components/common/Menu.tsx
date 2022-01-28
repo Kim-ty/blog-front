@@ -26,6 +26,10 @@ const Menu: React.FC<I_Props> = ({ isActive, setIsActive }) => {
     return (): void => document.removeEventListener('click', clickOutsideHandler);
   }, [isActive]);
 
+  useEffect(() => {
+    if (window.scrollY === 0) setIsActive(false);
+  }, [window.scrollY]);
+
   return (
     <div id="Menu">
       <div className={classNames('menu-wrap', { isActive })}>

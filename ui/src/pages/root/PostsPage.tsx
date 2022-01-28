@@ -1,15 +1,15 @@
 import PostsCategory from 'components/posts/PostsCategory';
 import React from 'react';
 
-import './PostsListPage.scss';
+import './PostsPage.scss';
 
-const PostsListPage: React.FC = ({ children }): JSX.Element => {
+const PostsPage: React.FC = ({ children }): JSX.Element => {
   return (
-    <div id="PostsListPage">
+    <div id="PostsPage">
       <PostsCategory />
       {children}
     </div>
   );
 };
 
-export default PostsListPage;
+export default PostsPage;

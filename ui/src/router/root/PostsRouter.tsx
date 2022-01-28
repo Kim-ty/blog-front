@@ -3,13 +3,16 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import PostsDetailPage from 'pages/root/PostsDetailPage';
 import PostsListRouter from 'router/posts/PostsListRouter';
+import PostsPage from 'pages/root/PostsPage';
 
 const PostsRouter: React.FC = () => {
   return (
-    <Routes>
-      <Route path="/*" element={<PostsListRouter />} />
-      <Route path="/detail/:postsNo" element={<PostsDetailPage />} />
-    </Routes>
+    <PostsPage>
+      <Routes>
+        <Route path="*" element={<PostsListRouter />} />
+        <Route path="/:category/:postsNo" element={<PostsDetailPage />} />
+      </Routes>
+    </PostsPage>
   );
 };
 

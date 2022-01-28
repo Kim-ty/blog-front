@@ -6,26 +6,30 @@ import './PostsCategory.scss';
 const PostsCategory: React.FC = (): JSX.Element => {
   return (
     <div id="PostsCategory">
-      <NavLink to="all">
+      <NavLink to="/posts/all">
         <span>전체보기</span>
       </NavLink>
-      <NavLink to="react">
+      <NavLink to="/posts/react">
         <span>react</span>
       </NavLink>
-      <NavLink to="java">
+      <NavLink to="/posts/java">
         <span>java</span>
       </NavLink>
-      <NavLink to="spring">
+      <NavLink to="/posts/spring">
         <span>spring</span>
       </NavLink>
-      <NavLink to="javaScript">
+      <NavLink to="/posts/javaScript">
         <span>javaScript</span>
       </NavLink>
-      <NavLink to="nginX">
+      <NavLink to="/posts/nginX">
         <span>nginX</span>
       </NavLink>
     </div>
   );
+};
+
+PostsCategory.defaultProps = {
+  isDetail: false,
 };
 
 export default PostsCategory;
