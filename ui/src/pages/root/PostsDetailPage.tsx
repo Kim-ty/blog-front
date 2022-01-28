@@ -13,9 +13,9 @@ const PostsDetailPage: React.FC = (): JSX.Element => {
 
   return (
     <div id="PostsDetailPage">
-      {/* <PostsDetailRemote type="pre" /> */}
+      <PostsDetailRemote type="pre" />
       <PostsDetail />
-      {/* <PostsDetailRemote type="post" /> */}
+      <PostsDetailRemote type="post" />
     </div>
   );
 };
