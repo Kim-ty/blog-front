@@ -1,0 +1,32 @@
+@import 'scss/_utils.scss';
+
+#PostsDetail {
+  width: 50vw;
+  margin: 10vh 0;
+  .title {
+    height: 20vh;
+    font-weight: 700;
+    font-size: 5rem;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .simpleInfo {
+    @include flex(center, space-between);
+    font-size: 2rem;
+    text-align: end;
+    margin-bottom: 10vh;
+    .category {
+      color: $pink;
+    }
+    .reg-date {
+      padding-left: 35px;
+      text-align: end;
+      color: #8c5aa6;
+      background-image: url('/icon/calendar.svg');
+      background-repeat: no-repeat;
+    }
+  }
+  .info {
+    font-size: 1.6rem;
+  }
+}

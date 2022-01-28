@@ -1,5 +1,6 @@
 @import 'scss/_utils.scss';
 
 #PostsDetailPage {
+  @include flex(center, center);
   width: 100%;
 }

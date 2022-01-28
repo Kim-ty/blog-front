@@ -1,0 +1,15 @@
+@import 'scss/_utils.scss';
+
+.MyInfo {
+  @include flex(center, flex-start);
+  margin-top: 10vh;
+  .profile-img {
+    width: 128px;
+    height: 128px;
+    background-color: $purple;
+    border-radius: 64px;
+  }
+  .profile-info {
+    margin-left: 2vw;
+  }
+}

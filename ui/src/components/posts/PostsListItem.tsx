@@ -34,7 +34,9 @@ const PostsListItem: React.FC = (): JSX.Element => {
 
   return (
     <NavLink className="posts-list-item" to="123">
-      <img className="thum" alt="sss" />
+      <div className="thum-wrap">
+        <div className="thum" />
+      </div>
       <div className="posts-area">
         <div className="category">&gt; react</div>
         <div className="title">React-router 5 에서 react-router 6</div>
