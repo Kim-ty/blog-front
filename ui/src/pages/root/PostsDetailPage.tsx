@@ -1,7 +1,5 @@
-import PostsCategory from 'components/posts/PostsCategory';
-import PostsDetail from 'components/posts/PostsDetail';
-import PostsDetailRemote from 'components/posts/PostsDetailRemote';
 import React, { useEffect } from 'react';
+import PostsDetail from 'components/posts/PostsDetail';
 
 import './PostsDetailPage.scss';
 

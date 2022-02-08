@@ -1,0 +1,12 @@
+@import 'scss/_utils.scss';
+
+#PostsAdd {
+  > div {
+    margin-bottom: 20px;
+    .title {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+  }
+}

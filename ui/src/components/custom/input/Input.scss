@@ -1,0 +1,12 @@
+@import 'scss/_utils.scss';
+
+.custom_input_wrap {
+  height: 30px;
+  padding: 4px 4px;
+  border: 1px solid $fontcolor;
+  border-radius: 3px;
+  .custom_input {
+    width: 100%;
+    font-size: 1.6rem;
+  }
+}
